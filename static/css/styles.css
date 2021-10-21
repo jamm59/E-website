@@ -1,0 +1,252 @@
+* {
+    margin:0;
+    padding:0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color:#EEEEEE;
+    transition: 1s ease-in-out;
+}
+/* navigation section */
+.navi-ul {
+    background:rgba(255,255,255,0.3);
+}
+.navi-bar,.nav-ul {
+    position:fixed;
+    width:5vw;
+    height:100vh;
+    transition:all 0.1s ease-in;
+    backdrop-filter: blur(1px);
+    z-index: 4;
+
+}
+.nav-ul {
+    background:rgba(255,255,255,0);
+}
+
+.nav-ul {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+}
+.nav-ul .last {
+    margin-top:30rem;
+}
+.nav-ul li i {
+    font-size:2rem;
+}
+.nav-ul li {
+    font-family: 'Montserrat', sans-serif;
+    padding: 1rem;
+    transition:all 0.1s ease-in;
+
+}
+
+.nav-ul li a  {
+    color:#FDFFBC;
+    text-decoration: none;
+    transition:all 0.1s ease-in;
+}
+.nav-ul li a span {
+    display:none;
+    position: relative;
+    left:0.4rem;
+}
+/* hover section */
+.navi-bar:hover {
+    width: 12vw;
+}
+.navi-bar:hover .logo i {
+    margin-right:8rem;
+    transform:rotate(-200deg);
+}
+.navi-bar:hover .nav-ul li a span {
+    display:block;
+}
+.navi-bar:hover .nav-link {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.navi-bar:hover .nav-list {
+    margin-left:3rem;
+}
+.nav-link:hover {
+    color:#fff;
+}
+
+/* logo */
+.logo {
+    background-color:#F48B29;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    height:50px;
+    padding-bottom:12px;
+}
+.logo-text {
+    display:none;
+}
+.logo i {
+    position:relative;
+    font-size:1.5rem;
+    transition:all 0.1s ease-in;
+
+}
+
+/* body header */
+.body-main {
+    height:100vh;
+    width:100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    transition: 1.5s ease-in-out;
+
+    
+}
+.content {
+    position: relative;
+    margin-left:40%;
+    padding-top:15%;
+    font-family: 'Montserrat', sans-serif;
+}
+.content h1 {
+    font-family: 'Sigmar One', cursive;
+    font-size: 70px;
+    font-weight: 800;
+    letter-spacing:5px;
+}
+
+.btn {
+    background: #fff;
+    background-color: #EEEEEE;
+    font-family: Arial;
+    color: black;
+    font-size: 20px;
+    padding: 17px 30px 16px 26px;
+    text-decoration: none;
+    border: 2px #fff solid;
+    backdrop-filter: blur(5px);
+    position:relative;
+    top:4rem;
+    left:14rem;
+    transition: all 0.7s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn:hover {
+    background:#DDDDDD;
+}
+.main-footer {
+    color:white;
+    background-color: #0A1D37;
+    text-align: center;
+    height: 40vh;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.main-footer p {
+    position: relative;
+    top:1rem;
+}
+.main-footer h4 {
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+.main-footer div {
+    display:flex;
+    
+}
+.main-footer div a {
+    margin:0 2rem;
+    font-size:2rem;
+}
+/* screen size */
+@media screen and (max-width: 900px){
+    .body-main {
+        border-radius: 0 0 50rem 0;
+    }
+    .navi-bar:hover .nav-ul li a span {
+        display:none;
+    }    .btn {
+        left: 0;
+    }
+    .navi-bar,.nav-ul {
+        position:fixed;
+        width:100vw;
+        height:7vh;
+        bottom:0;
+        flex-direction: row;
+        align-items: center;
+        justify-content:space-evenly;
+    }
+    .navi-bar:hover,.nav-ul:hover {
+        width:100vw;
+    }
+    .logo {
+        display:none;
+    }
+    .content {
+        padding-left:0%;
+        letter-spacing:1px;
+        margin-left:1%;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        position:relative;
+        top:15rem;
+    }
+    .content h1 {      
+        font-family: 'Sigmar One', cursive;
+        font-weight: bold;
+        font-size :50px;
+        text-align: center;
+    }
+    .nav-ul .last {
+        margin-top:0rem;
+    }
+    #switch {
+        right:2rem;
+        bottom:18rem;
+    }
+}
+.main-store {
+    position: relative;
+    z-index: 3;
+}
+
+.switch {
+    background:white;
+    position:relative;
+    bottom: 15rem;
+    margin-left:auto;
+    right:5rem;
+    color: black;
+    font-size: 1.5rem;
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition: 1s ease-in;
+}
+.switch i{
+    transition: 1s ease-in;
+}
+
+
+
+@keyframes drive {
+    from{ transform: tranlateX(0)}
+    to{transform: tranlateX(250px) }
+    
+}

@@ -1,0 +1,160 @@
+.main-store {
+  background-image: linear-gradient(#EEEEEE 5% ,#FCD1D1 80% ,#EEEEEE);
+  background-color:#FCD1D1;
+  width:100vw;
+  min-height:80vh; 
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  flex-wrap:wrap;
+
+}
+.card1 {
+  background-color:pink;
+  width:300px;
+  height:400px;
+  transition: 1s ease-in-out;
+  transform-style:preserve-3d;
+  margin:4rem;
+}
+.card1:hover {
+  transform:rotateY(180deg);
+}
+.front1 {
+  position:absolute;
+  background:#F4EEED;
+  width:300px;
+  height:400px;
+}
+.back1 {
+  position:absolute;
+  z-index: -1;
+  background:#F7F6F2;
+  width:300px;
+  height:400px;
+  transform:rotateY(180deg);
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+}
+.image {
+  background:pink;
+  width:300px;
+  height:250px;
+  background-repeat:no-repeat,repeat;
+  background-size:cover;
+}
+.add-btn {
+  height:0px;
+  background:red;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  bottom:9rem;
+  z-index: 5;
+}
+@media  screen and (max-width:900px) {
+  .add-btn {
+    text-align:center;
+    bottom:3.5rem;
+  }
+  
+}
+
+@media screen and (min-width: 900px) {
+  .main-store {
+    justify-content:center;
+    align-items:center;
+    right:1.4rem;
+  }
+  .add-btn {
+    width:75%;
+    top:0.5rem;
+  }
+}
+
+.section,.section2 {
+  width:100vw;
+  min-height:40vh;
+  background:#EEEEEE;
+}
+.section {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+
+}
+.section ul {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.section ul li {
+  list-style-type:none;
+  margin:6rem;
+}
+.section ul li div i {
+  font-size: 7rem;
+  color:#FF4848;
+}
+.section ul li div span {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* card info */
+.rating {
+  color:rgb(201, 204, 213,0.7);
+  position:relative;
+  bottom:9rem;
+  text-align:center;
+  font-size: 9rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bold;
+}
+.card-name,.card-price {
+  font-family: 'Montserrat', sans-serif;
+  text-align:center;
+  line-height:2;
+  position:relative;
+  bottom:9rem;
+}
+.only-admin {
+  position:relative;
+  z-index: 3;
+  color:#000000;
+  position:relative;
+  bottom:9rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size:16px;
+}
+.only-admin .fir {
+  text-decoration: none;
+  color:#000000;
+  position:relative;
+  left:1rem;
+  border:1px solid #fff;
+  display: block;
+  padding:0.5rem;
+  width:3rem;
+  text-align:center;
+  background-color:#8FC1D4;
+}
+.only-admin .sec {
+  margin-left: 250px;
+  color:#000000;
+  position:relative;
+  bottom:1rem;
+}
+.card-body {
+  width:300px;
+  height:200px;
+  position:relative;
+  top:1rem;
+  z-index: 0;
+}
+.only{
+  top:7rem;
+
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %} 
+
+{% block title %}{% endblock %}
+
+{% block styles %}
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_card.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="register-form">
+    <h1>Add information for card</h1>
+    <form  action="{{ url_for('add_card')}}" method="post" novalidate>
+        {{ form.csrf_token }}
+        {{ ckeditor.load() }}
+        {{ ckeditor.config(name='body') }}
+        {{ form.name.label}}<br>{{form.name(size=60)}}<br>
+        {% for error in form.name.errors %}
+        <span class='errors'>{{ error }}</span>
+        {% endfor %}<br>
+        {{ form.image.label}}<br>{{form.image(size=60)}}<br>
+        {% for error in form.image.errors %}
+        <span class='errors'>{{ error }}</span>
+        {% endfor %}<br>
+        {{ form.price.label}}<br>{{form.price(size=60)}}<br>
+        {% for error in form.price.errors %}
+        <span class='errors'>{{ error }}</span>
+        {% endfor %}<br>
+        {{ form.rating.label}}<br>{{form.rating(size=60)}}<br>
+        {% for error in form.rating.errors %}
+        <span class='errors'>{{ error }}</span>
+        {% endfor %}<br>
+        {{ form.body.label}}<br>{{form.body(size=30)}}<br>
+        {% for error in form.body.errors %}
+        <span class='errors'>{{ error }}</span>
+        {% endfor %}<br>
+        <button >
+            <span>Addcard</span>
+        </button>
+    </form>
+</div>
+{% endblock %}

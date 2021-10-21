@@ -1,0 +1,16 @@
+.register-form form {
+    border: 2px solid black;
+    padding:3rem;
+}
+#submit {
+    height:35px;
+}
+.errors {
+    font-family: 'Montserrat', sans-serif;
+    color:red;
+}
+@media screen and (max-width:900px) {
+    .register-form form {
+        padding:1rem;
+    }
+}

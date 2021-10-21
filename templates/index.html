@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block styles %}
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&family=Sanchez&family=Sigmar+One&display=swap" rel="stylesheet">
+<!-- css file -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/cards.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/review.css') }}">
+<link rel="icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+<script src="{{url_for('static', filename='js/review.js')}}"></script>
+<!-- icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block content %}
+<!-- ..............................................................navigation bar................................................ -->
+<div class="navi-bar">
+    <div class="logo">
+        <span class='logo-text'>Logo</span>
+        <i class="bi bi-brightness-high"></i>
+    </div>
+    <ul class="nav-ul">
+        <li class="nav-list">     
+            <a href="" class="nav-link">
+                <i class="bi bi-house"></i>
+                <span class='link-text'>Home</span>
+            </a>
+        </li>
+        <li class="nav-list">           
+            <a href="#store" class="nav-link">
+                <i class="bi bi-bag-check"></i>
+                <span class='link-text'> Store</span>
+            </a>
+        </li>
+        <li class="nav-list">           
+            <a href="#about" class="nav-link">
+                <i class="bi bi-person-fill"></i>
+                <span class='link-text'> About </span>
+            </a>
+        </li>
+        <li class="nav-list">
+            <a href="{{ url_for('contact') }}" class="nav-link">
+                <i class="bi bi-telephone"></i>
+                <span class='link-text'> Contact</span>
+            </a>
+        </li>
+        <li class="nav-list last">           
+            <a href="{{ url_for('logout') }}" class="nav-link">
+                <i class="bi bi-box-arrow-in-left"></i>
+                <span class='link-text'> Logout </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- ..................................................header main................................................................ -->
+<div class="body-main" style="background-image: url('static/image/home/wood{{ random_num }}.jpg');">
+    <div class="content">
+        <div id='switch' class='switch'>
+            <i class="bi bi-moon-fill"></i>
+        </div>
+        <h4>Hi, {{ current_user.name }}</h4>
+        <h1>BEst Selling Now</h1>
+        <a href="#store" class='btn'><span>Shop now</span></a>
+    </div>
+</div>
+<!-- ......................................................another section...................................... -->
+<div class='section'>
+    <ul>
+        <li>
+            <div class='icons'><i class="bi bi-check-circle"></i></div>
+            <div><span>Easy to use</span></div>
+        </li>
+        <li>
+            <div><i class="bi bi-truck"></i></div>
+            <div><span>Quick delivery</span></div>
+        </li>
+        <li>
+            <div><i class="bi bi-cash-coin"></i></div>
+            <div><span>30 days Money back </span></div>
+        </li>
+    </ul>
+</div>
+<!-- ........................................................store........................................................... -->
+<div class="main-store" id='store'>
+    {% for card in all_cards %}
+    <div class='card1'>
+        <div class='front1'>
+            <div 
+            class='image' 
+            style="background-image:url('{{ card.img_url }}')">
+            </div>
+            <div class='rating'>{{ card.rating }}</div>
+            <h4 class='card-name'>{{ card.name }}</h4>
+            <div class='card-price'>{{ card.price }}</div>
+            <div class='only-admin'>
+                <a class='fir' href="{{ url_for('contact') }}">Buy</a>
+                {% if current_user.id == 1: %}
+                <a class='sec' href="{{ url_for('delete', id= card.card_id) }}"><i class="bi bi-x-lg"></i></a>
+                {% endif%}
+            </div>
+            </div>
+        <div class='back1'>
+            <h4>Description</h4>
+            <div class='card-body'>{{ card.description }}</div>
+            <div class='only-admin only'>
+                <a class='fir' href="{{ url_for('contact') }}">Buy</a>
+                {% if current_user.id == 1: %}
+                <a class='sec' href="{{ url_for('delete', id= card.card_id) }}"><i class="bi bi-x-lg"></i></a>
+                {% endif%}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>  
+{% if current_user.id == 1: %}
+<div class='add-btn'>
+    <a class='btn ' href="{{ url_for('add_card')}}">Add</a>
+</div>
+{% endif %}
+     
+<div id='about' class='section2'></div>
+<div class="main-footer" style="font-family: 'Montserrat', sans-serif;">
+    <h4 style='font-size: 20px; margin-bottom:1rem;'>secure and fast available</h4>
+    <div>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-twitter"></i></a>
+    </div>
+    <p style='position: relative;bottom:1rem;'>@copyright 2021 D&D</p>
+</div>
+{% endblock%}

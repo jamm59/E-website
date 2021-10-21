@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Contact{% endblock%}
+
+{% block styles %}
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;700;800;900&family=Sanchez&display=swap" rel="stylesheet"><!-- css file -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+<!-- custom css -->
+<link rel="stylesheet" href="{{ url_for('static',filename='css/contactstyle.css') }}">
+<!-- bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+{% endblock%}
+
+{% block content %}
+<div class="main" >
+    <h1>Contact !</h1>
+    <form class="row g-3 needs-validation" novalidate method="post" action="{{ url_for('contact')}}" novalidate>
+        <div class="col">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input type="text"  class="form-control" id="validationCustom01" required>
+        </div>
+        <div class="col">
+        <label for="validationCustom02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationCustom02" required>
+        </div>
+        <div class="col">
+        <label for="validationCustom03" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationCustom03" required>
+        </div>
+        <div class="col">
+            <label for="validationCustom03" class="form-label">Email</label>
+            <input type="text" class="form-control" id="validationCustom04" required>
+        </div>
+        <div class="col">
+            <label for="validationCustom03" class="form-label">Message</label>
+            <input type="text" class="form-control message" id="validationCustom05" required>
+        </div>
+        <div class="col last">
+            <button class="btn btn-primary" id='btn' type="submit">Submit form</button>
+        </div>
+        <button class='btn btn-light btn-lg' id='second'>Submit</button>
+    </form>
+    <div class="big-circle">
+        <div class='circle c-one'></div>
+        <div class='circle c-two'></div>
+        <div class='circle c-three'></div>
+    </div>
+    <div class="main-footer">
+        <h4>secure and fast available</h4>
+        <div>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-twitter"></i></a>
+        </div>
+        <p>@copyright 2021 D&D</p>
+    </div>
+</div>
+<!-- navigation -->
+<div class='navi-bar'>
+    <ul>
+        <li><a href="{{ url_for('home')}}"><i class="bi bi-house"></i></a></li>
+        <li><a href="{{ url_for('home')}}"><i class="bi bi-bag-check"></i></a></li>
+        <li><a href="{{ url_for('home')}}"><i class="bi bi-person-fill"></i></a></li>
+        <li><a href="{{ url_for('contact')}}"><i class="bi bi-telephone"></i></a></li>
+        <li><a href="{{ url_for('logout')}}"><i class="bi bi-box-arrow-in-left"></i></a></li>
+    </ul>
+</div>
+{% endblock%}

@@ -1,0 +1,18 @@
+<div class='main'>
+  <div class='card'>
+    <div class='front'>
+      <div style="background-image:url('https://cdn.dribbble.com/users/1068771/screenshots/14225432/media/0da8c461ba3920a8c827d864a6e051ed.jpg?compress=1&resize=400x300')"class='image'></div>
+    </div>
+    <div class='back'></div>
+  </div>
+  <div class='card'>
+    <div class='front'>
+      <div style="background-image:url('https://media.istockphoto.com/vectors/workplace-of-programmer-or-coder-vector-illustration-programmer-a-vector-id1089763848')"class='image'></div>
+    </div>
+    <div class='back'></div>
+  </div>
+</div>
+
+
+
+....................................................css.................................................................

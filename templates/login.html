@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block styles %}
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class='nav-section'>
+    <div class='navigation-brand'></div>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Shop</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+    </ul>
+</div>
+<div class='register-form'>
+    <h1>Login</h1>
+    <form action="{{ url_for('login') }}" method="post" novalidate>
+        {% with messages = get_flashed_messages() %}
+        {% if messages: %}
+        <ul class='flashes'>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {{ form.csrf_token }}
+        {{ form.email.label }} <br> {{ form.email(size="50") }}<br>
+        {{ form.password.label }} <br> {{ form.password(size="50") }} <br>
+        <button >
+            <span>LogIn</span>
+        </button>
+    </form>
+    <a  class='instead1' href="">Forgot password ? </a>
+</div>
+{% endblock %}
