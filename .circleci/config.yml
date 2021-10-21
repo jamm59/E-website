@@ -44,4 +44,8 @@ workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
+<<<<<<< HEAD
       - build-and-test
+=======
+      - build-and-test
+>>>>>>> e45aadfff0b38b3f6fa236e819bcf13b3b9c0e43
