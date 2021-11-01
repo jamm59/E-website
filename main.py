@@ -26,7 +26,7 @@ def admin_only(func):
         return func(*args, **kwargs)      
     return wrapper
 #................................flask database..............................................................
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop_database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///blog.db') 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
