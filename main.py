@@ -15,7 +15,7 @@ import random
 
 app = Flask(__name__)
 ckeditor = CKEditor(app)
-app.config['SECRET_KEY'] = 'namekey'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 Bootstrap(app)
 #............decorator....................
 def admin_only(func):
